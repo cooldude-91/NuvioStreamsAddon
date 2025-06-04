@@ -46,7 +46,8 @@ console.log(`[addon.js] HollyMovieHD provider fetching enabled: ${ENABLE_HOLLYMO
 
 // NEW: Read environment variable for Xprime
 const ENABLE_XPRIME_PROVIDER = process.env.ENABLE_XPRIME_PROVIDER !== 'false'; // Defaults to true if not set or not 'false'
-console.log(`[addon.js] Xprime provider fetching enabled: ${ENABLE_XPRIME_PROVIDER}`);
+const USE_SCRAPER_API = process.env.USE_SCRAPER_API === 'true';
+console.log(`[addon.js] Xprime provider fetching enabled: ${ENABLE_XPRIME_PROVIDER}. USE_SCRAPER_API: ${USE_SCRAPER_API}`);
 
 // NEW: Stream caching config
 const STREAM_CACHE_DIR = process.env.VERCEL ? path.join('/tmp', '.streams_cache') : path.join(__dirname, '.streams_cache');
