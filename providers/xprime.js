@@ -203,6 +203,8 @@ async function getXprimeStreams(title, year, type, seasonNum, episodeNum, usePro
         let xprimeResult;
 
         // Decision logic for fetching
+        console.log("Loaded USE_SCRAPER_API:", process.env.USE_SCRAPER_API);
+        console.log("Loaded scraperApiKey:", scraperApiKey);
         if (USE_SCRAPER_API && scraperApiKey) {
             console.log('[Xprime.tv] Attempting to use ScraperAPI.');
             try {
