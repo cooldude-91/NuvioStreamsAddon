@@ -6,7 +6,7 @@ const axios = require('axios'); // For making HTTP requests including HEAD reque
 const crypto = require('crypto'); // For hashing URLs
 
 const XPRIME_PROXY_URL = process.env.XPRIME_PROXY_URL;
-const USE_SCRAPER_API = process.env.USE_SCRAPER_API === 'true'; // New: Control whether ScraperAPI should be used
+const USE_SCRAPER_API = true; //process.env.USE_SCRAPER_API === 'true'; // New: Control whether ScraperAPI should be used
 const MAX_RETRIES_XPRIME = 3;
 const RETRY_DELAY_MS_XPRIME = 1000;
 
