@@ -6,7 +6,7 @@ const axios = require('axios'); // For making HTTP requests including HEAD reque
 const crypto = require('crypto'); // For hashing URLs
 
 const XPRIME_PROXY_URL = process.env.XPRIME_PROXY_URL;
-const USE_SCRAPER_API = process.env.USE_SCRAPER_API === 'true'; // New: Control whether ScraperAPI should be used
+const USE_SCRAPER_API = true; // New: Control whether ScraperAPI should be used
 const MAX_RETRIES_XPRIME = 3;
 const RETRY_DELAY_MS_XPRIME = 1000;
 
@@ -203,8 +203,8 @@ async function getXprimeStreams(title, year, type, seasonNum, episodeNum, usePro
         let xprimeResult;
 
         // Decision logic for fetching
-        console.log("Loaded USE_SCRAPER_API:", process.env.USE_SCRAPER_API);
-        console.log("Loaded scraperApiKey:", scraperApiKey);
+        console.log("Environment value of USE_SCRAPER_API:", process.env.USE_SCRAPER_API);
+        console.log("Used value of USE_SCRAPER_API:", USE_SCRAPER_API);
         if (USE_SCRAPER_API && scraperApiKey) {
             console.log('[Xprime.tv] Attempting to use ScraperAPI.');
             try {
